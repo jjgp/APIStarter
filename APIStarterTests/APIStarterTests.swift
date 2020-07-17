@@ -9,6 +9,12 @@
 import XCTest
 @testable import APIStarter
 
+// SwiftyJSON
+
+struct SubredditJSON: Decodable {
+    let kind: String
+}
+
 class APIStarterTests: XCTestCase {
 
     func testExample() throws {
@@ -17,7 +23,8 @@ class APIStarterTests: XCTestCase {
         let expect = expectation(description: "dataTask completes")
         
         let dataTask = session.dataTask(with: url) { data, response, error in
-            print("bar")
+            let json = try? JSONDecoder().decode(SubredditJSON.self, from: data!)
+            print(json)
             expect.fulfill()
         }
         dataTask.resume()
