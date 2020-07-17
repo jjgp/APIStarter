@@ -1,0 +1,6 @@
+framework module Pods_APIStarter {
+  umbrella header "Pods-APIStarter-umbrella.h"
+
+  export *
+  module * { export * }
+}

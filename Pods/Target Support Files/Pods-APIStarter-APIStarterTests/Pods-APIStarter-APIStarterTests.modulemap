@@ -1,0 +1,6 @@
+framework module Pods_APIStarter_APIStarterTests {
+  umbrella header "Pods-APIStarter-APIStarterTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
